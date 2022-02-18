@@ -22,22 +22,22 @@ export default class ControlPanel extends React.Component{
 
     getData(){
         if(this.state.accessGranted){
-            fetch("https://localhost:3001/dbs")
+            fetch("localhost:3001/dbs")
             .then((res)=>res.json())
             .then((dbs)=>this.setState({dbs}));
 
-            fetch("https://localhost:3001/magazzino")
+            fetch("localhost:3001/magazzino")
             .then((res)=>res.json())
             .then((magazzino)=>this.setState({magazzino}))
 
-            fetch("https://localhost:3001/ordini")
+            fetch("localhost:3001/ordini")
             .then((res)=>res.json())
             .then((ordini)=>this.setState({ordini}))
         }
     }
 
     deleteDB(name){
-        fetch("https://localhost:3001/dbs/delete", {
+        fetch("localhost:3001/dbs/delete", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -59,7 +59,7 @@ export default class ControlPanel extends React.Component{
     }
 
     newDB(name){
-        fetch("https://localhost:3001/dbs/new", {
+        fetch("localhost:3001/dbs/new", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -73,7 +73,7 @@ export default class ControlPanel extends React.Component{
 
     addToMagazzino(){
         let data = $("#add_form").serializeArray();
-        fetch("https://localhost:3001/magazzino/add", {
+        fetch("localhost:3001/magazzino/add", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
