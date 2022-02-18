@@ -1,6 +1,7 @@
 {
   "name": "LibrandoVI",
   "version": "0.1.0",
+  "homepage": "https://micheledallerive.ch/librandovi/demo/",
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
