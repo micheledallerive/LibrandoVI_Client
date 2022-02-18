@@ -33,7 +33,7 @@ export default class Cart extends React.Component{
         let isbns = Object.keys(this.props.cart);
         isbns.map((ISBN, index)=>{
             promises.push(new Promise((re, rj)=>{
-                fetch("https://librandovi.it:3001/magazzino/quantity/"+this.props.cart[ISBN].action.toString().replace("1", "")+ISBN)
+                fetch("https://micheledallerive.ch:3001/magazzino/quantity/"+this.props.cart[ISBN].action.toString().replace("1", "")+ISBN)
                 .then((res)=>res.json())
                 .then((data)=>re(data.max));
             }));
@@ -108,7 +108,7 @@ export default class Cart extends React.Component{
                                                 let isbns = Object.keys(this.props.cart);
                                                 isbns.map((ISBN, index)=>{
                                                     promises.push(new Promise((re, rj)=>{
-                                                        fetch("https://librandovi.it:3001/magazzino/quantity/"+this.props.cart[ISBN].action.toString().replace("1", "")+ISBN)
+                                                        fetch("https://micheledallerive.ch:3001/magazzino/quantity/"+this.props.cart[ISBN].action.toString().replace("1", "")+ISBN)
                                                         .then((res)=>res.json())
                                                         .then((data)=>re(data.max));
                                                     }));
