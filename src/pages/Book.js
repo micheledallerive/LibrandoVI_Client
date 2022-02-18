@@ -18,7 +18,7 @@ export default class Book extends React.Component{
     }
 
     componentDidMount(){
-        fetch("/book/"+this.props.ISBN)
+        fetch("https://localhost:3001/book/"+this.props.ISBN)
         .then((res)=>res.json())
         .then((data)=>{
             this.setState({data: data, loading: false});

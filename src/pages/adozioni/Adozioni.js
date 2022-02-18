@@ -50,7 +50,7 @@ export default class Adozioni extends React.Component{
         let newLimit = this.state.limit+increment;
         let query = "/schools/sorted?sort=1&limit="+newLimit;
         if(this.state.filter!=="" && this.state.filter!=null) query+="&filter="+this.state.filter;
-        fetch(""+query)
+        fetch("https://localhost:3001"+query)
         .then((res)=>res.json())
         .then((data)=>{
             console.log(data.schools);

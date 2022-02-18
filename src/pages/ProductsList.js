@@ -39,7 +39,7 @@ class ProductsList extends React.Component{
         let newLimit = this.state.limit+increment;
         let query = (this.props.query || "/books")+"?limit="+newLimit;
         if(this.state.filter!=="" && this.state.filter!==null) query+="&filter="+this.state.filter;
-        fetch(""+query)
+        fetch("https://localhost:3001"+query)
         .then((res)=>res.json())
         .then((data)=>{
             console.log("Length: "+data.books.length+"  Count: "+data.count);
