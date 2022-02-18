@@ -17,10 +17,10 @@ export default class Classe extends React.Component{
     }
 
     componentDidMount(){
-        fetch("https://localhost:3001/adozioni/libri?codice="+this.props.codice+"&classe="+this.props.classe)
+        fetch("https://micheledallerive.ch:3001/adozioni/libri?codice="+this.props.codice+"&classe="+this.props.classe)
         .then((res)=>res.json())
         .then((data)=>
-            fetch("https://localhost:3001/school?codice="+this.props.codice)
+            fetch("https://micheledallerive.ch:3001/school?codice="+this.props.codice)
             .then((res)=>res.json())
             .then((scuola)=>{
                 this.setState({
