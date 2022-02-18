@@ -88,7 +88,7 @@ class App extends React.Component{
   render(){
     return(
       <>
-      <Router>
+      <Router basename="/librandovi/demo/">
         <Switch>
           
           <Route path="/checkout">
