@@ -62,7 +62,7 @@ export default class Checkout extends React.Component{
             }
         });
         console.log(orderInfo);
-        fetch("localhost:3001/order", {
+        fetch("/order", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
