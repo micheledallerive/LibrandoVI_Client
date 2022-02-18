@@ -62,7 +62,7 @@ export default class Checkout extends React.Component{
             }
         });
         console.log(orderInfo);
-        fetch("https://micheledallerive.ch:3001/order", {
+        fetch("https://localhost:3001/order", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',

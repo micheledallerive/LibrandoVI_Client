@@ -15,7 +15,7 @@ export default class ListItem extends React.Component{
     }
 
     componentDidMount(){
-        fetch("https://micheledallerive.ch:3001/magazzino/quantity/"+this.props.item.action.toString().replace("1", "")+this.props.item.book.ISBN)
+        fetch("https://localhost:3001/magazzino/quantity/"+this.props.item.action.toString().replace("1", "")+this.props.item.book.ISBN)
         .then((res)=>res.json())
         .then((data)=>{
             this.setState({max: data.max, loading:false});

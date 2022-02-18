@@ -22,22 +22,22 @@ export default class ControlPanel extends React.Component{
 
     getData(){
         if(this.state.accessGranted){
-            fetch("https://micheledallerive.ch:3001/dbs")
+            fetch("https://localhost:3001/dbs")
             .then((res)=>res.json())
             .then((dbs)=>this.setState({dbs}));
 
-            fetch("https://micheledallerive.ch:3001/magazzino")
+            fetch("https://localhost:3001/magazzino")
             .then((res)=>res.json())
             .then((magazzino)=>this.setState({magazzino}))
 
-            fetch("https://micheledallerive.ch:3001/ordini")
+            fetch("https://localhost:3001/ordini")
             .then((res)=>res.json())
             .then((ordini)=>this.setState({ordini}))
         }
     }
 
     deleteDB(name){
-        fetch("https://micheledallerive.ch:3001/dbs/delete", {
+        fetch("https://localhost:3001/dbs/delete", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -59,7 +59,7 @@ export default class ControlPanel extends React.Component{
     }
 
     newDB(name){
-        fetch("https://micheledallerive.ch:3001/dbs/new", {
+        fetch("https://localhost:3001/dbs/new", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -73,7 +73,7 @@ export default class ControlPanel extends React.Component{
 
     addToMagazzino(){
         let data = $("#add_form").serializeArray();
-        fetch("https://micheledallerive.ch:3001/magazzino/add", {
+        fetch("https://localhost:3001/magazzino/add", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
