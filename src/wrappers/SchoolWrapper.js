@@ -1,14 +1,14 @@
-import React from 'react';
-import {useHistory, useParams} from 'react-router-dom';
+import React from 'react'
+import { useParams } from 'react-router-dom'
 
-import School from '../pages/adozioni/School';
+import School from '../pages/adozioni/School'
 
-function SchoolWrapper(props){
-    const {codice} = useParams();
-    return(
-        <>
-            <School codice={codice}/>
-        </>
-    )
+function SchoolWrapper (props) {
+  const { codice } = useParams()
+  return (
+    <>
+      <School codice={codice} />
+    </>
+  )
 }
-export default SchoolWrapper;
+export default SchoolWrapper
