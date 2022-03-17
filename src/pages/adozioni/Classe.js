@@ -3,6 +3,8 @@ import React from 'react'
 import BookLoader from '../../components/BookLoader'
 import ProductItem from '../../components/ProductItem'
 
+import { API_URL } from '../../constants'
+
 export default class Classe extends React.Component {
   constructor (props) {
     super(props)
@@ -15,15 +17,12 @@ export default class Classe extends React.Component {
 
   componentDidMount () {
     fetch(
-      'https://micheledallerive.ch:3001/adozioni/libri?codice=' +
-        this.props.codice +
-        '&classe=' +
-        this.props.classe
+      `${API_URL}/adozioni/libri?codice=${this.props.codice}&classe=${this.props.classe}`
     )
       .then(res => res.json())
       .then(data =>
         fetch(
-          'https://micheledallerive.ch:3001/school?codice=' + this.props.codice
+          `${API_URL}/school?codice=${this.props.codice}`
         )
           .then(res => res.json())
           .then(scuola => {

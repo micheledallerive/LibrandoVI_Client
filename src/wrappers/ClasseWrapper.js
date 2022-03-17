@@ -7,7 +7,12 @@ function ClasseWrapper (props) {
   const { codice, classe } = useParams()
   return (
     <>
-      <Classe codice={codice} classe={classe} goBack={useHistory().goBack} addToCart={props.addToCart} />
+      <Classe
+        codice={codice}
+        classe={classe}
+        goBack={useHistory().goBack}
+        addToCart={props.addToCart}
+      />
     </>
   )
 }

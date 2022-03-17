@@ -9,6 +9,7 @@ import SchoolWrapper from '../../wrappers/SchoolWrapper'
 import ClasseWrapper from '../../wrappers/ClasseWrapper'
 
 import { Switch, Route } from 'react-router-dom'
+import { API_URL } from '../../constants'
 
 export default class Adozioni extends React.Component {
   constructor (props) {
@@ -48,9 +49,11 @@ export default class Adozioni extends React.Component {
 
   getSchools (increment) {
     const newLimit = this.state.limit + increment
-    let query = '/schools/sorted?sort=1&limit=' + newLimit
-    if (this.state.filter !== '' && this.state.filter != null) { query += '&filter=' + this.state.filter }
-    fetch('https://micheledallerive.ch:3001' + query)
+    let query = `/schools/sorted?sort=1&limit=${newLimit}`
+    if (this.state.filter !== '' && this.state.filter != null) {
+      query += '&filter=' + this.state.filter
+    }
+    fetch(`${API_URL}${query}`)
       .then(res => res.json())
       .then(data => {
         console.log(data.schools)

@@ -49,14 +49,6 @@ class ProductItem extends React.Component {
                         <p className='font-weight-light font-italic mb-2 card-text'>
                           {this.props.product.ISBN}
                         </p>
-                        {/* <div className="d-md-none d-lg-block truncate">
-                                            <span className="font-weight-bold">Autor{(this.props.product.autori.length>1)?"i":"e"}: &nbsp;</span>
-                                            <span>{this.props.product.autori.map((author, index)=>(
-                                                    <>{author}
-                                                    {(index==(this.props.product.autori.length-1))?"":", "}
-                                                    </>
-                                                ))}</span>
-                                            </div> */}
                         <div className='prezzo mt-2'>
                           <span className='font-weight-bold mt-1 card-text'>
                             Prezzo: &nbsp;

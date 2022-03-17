@@ -5,6 +5,8 @@ import CustomLink from '../components/CustomLink'
 
 import $ from 'jquery'
 
+import { API_URL } from '../constants'
+
 export default class Cart extends React.Component {
   constructor (props) {
     super(props)
@@ -31,7 +33,7 @@ export default class Cart extends React.Component {
         promises.push(
           new Promise((resolve, reject) => {
             fetch(
-              'https://micheledallerive.ch:3001/magazzino/quantity/' +
+              `${API_URL}/magazzino/quantity/` +
                 this.props.cart[ISBN].action.toString().replace('1', '') +
                 ISBN
             )
@@ -167,7 +169,7 @@ export default class Cart extends React.Component {
                                     promises.push(
                                       new Promise((resolve, reject) => {
                                         fetch(
-                                          'https://micheledallerive.ch:3001/magazzino/quantity/' +
+                                          `${API_URL}/magazzino/quantity/` +
                                               this.props.cart[ISBN].action
                                                 .toString()
                                                 .replace('1', '') +

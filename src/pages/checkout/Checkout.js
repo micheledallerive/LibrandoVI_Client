@@ -6,6 +6,8 @@ import * as bootstrap from 'bootstrap'
 import { Redirect, Switch, Route } from 'react-router-dom'
 import CheckoutSuccess from './CheckoutSuccess'
 
+import { API_URL } from '../../constants'
+
 import $ from 'jquery'
 
 export default class Checkout extends React.Component {
@@ -58,7 +60,7 @@ export default class Checkout extends React.Component {
       }
     })
     console.log(orderInfo)
-    fetch('https://micheledallerive.ch:3001/order', {
+    fetch(`${API_URL}:3001/order`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

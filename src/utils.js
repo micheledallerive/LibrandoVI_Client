@@ -7,7 +7,7 @@ function getPrice (data) {
 
 function getFinalPrice (data, multiplier) {
   const p = getPrice(data)
-  return Math.round((p * multiplier) * 2) / 2
+  return Math.round(p * multiplier * 2) / 2
 }
 
 function priceFormat (price) {
@@ -19,7 +19,13 @@ function getTotalPrice (cart) {
   let finalPrice = 0
   Object.keys(cart).map((key, index) => {
     const product = cart[key]
-    const price = (getFinalPrice(product.book, (parseInt(product.action) > 0) ? BUY_MULTIPLIER : SELL_MULTIPLIER)) * product.quantity * parseInt(product.action)
+    const price =
+      getFinalPrice(
+        product.book,
+        parseInt(product.action) > 0 ? BUY_MULTIPLIER : SELL_MULTIPLIER
+      ) *
+      product.quantity *
+      parseInt(product.action)
     finalPrice += price
     return key
   })

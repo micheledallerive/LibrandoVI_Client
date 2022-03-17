@@ -7,7 +7,6 @@ import ProductsList from './pages/ProductsList'
 import Cart from './pages/Cart'
 import Adozioni from './pages/adozioni/Adozioni'
 import Checkout from './pages/checkout/Checkout'
-import ControlPanel from './pages/ControlPanel'
 
 import BookWrapper from './wrappers/BookWrapper'
 
@@ -89,7 +88,6 @@ class App extends React.Component {
             <Route path='/checkout'>
               <Checkout cart={this.state.cart} clearCart={this.clearCart} />
             </Route>
-            <Route exact path='/admin' component={ControlPanel} />
             <div className='h-100 d-flex flex-column'>
               <nav class='navbar sticky-top flex-shrink-1 navbar-expand-lg navbar-light bg-white shadow-sm'>
                 <Link class='navbar-brand d-block d-lg-none' to='/'>LibrandoVI</Link>
@@ -128,9 +126,6 @@ class App extends React.Component {
                   Il libro è stato aggiunto al carrello!
                 </div>
               </div>
-
-              {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
               <div className='h-100' id='main-content'>
                 <Route exact path='/cart'>
                   <Cart cart={this.state.cart} removeFromCart={this.removeFromCart} clearCart={this.clearCart} changeQuantity={this.changeQuantity} />

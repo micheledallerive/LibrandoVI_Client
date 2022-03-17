@@ -1,5 +1,5 @@
 import React from 'react'
-import { BUY_MULTIPLIER, SELL_MULTIPLIER } from '../constants'
+import { BUY_MULTIPLIER, SELL_MULTIPLIER, API_URL } from '../constants'
 import { getFinalPrice, priceFormat } from '../utils'
 import QuantitySelector from './QuantitySelector'
 import CustomLink from './CustomLink'
@@ -7,15 +7,16 @@ import CustomLink from './CustomLink'
 export default class ListItem extends React.Component {
   constructor (props) {
     super(props)
-    // STRUTTURA: {book: {roba del libro (ISBN, immagine, prezzo, autori ecc)}, quantity: quantità, action: -1 se vendi 1 se compri}
-    // ottengo i dati in this.props.item
-    // i dati riguardo il libro sono this.props.item.book
+    /* STRUTTURA:
+      {book: {roba del libro (ISBN, immagine, prezzo, autori ecc)}, quantity: quantità, action: -1 se vendi 1 se compri}
+      ottengo i dati in this.props.item
+      i dati riguardo il libro sono this.props.item.book */
     this.state = { max: 0, loading: true }
   }
 
   componentDidMount () {
     fetch(
-      'https://micheledallerive.ch:3001/magazzino/quantity/' +
+      `${API_URL}/magazzino/quantity/` +
         this.props.item.action.toString().replace('1', '') +
         this.props.item.book.ISBN
     )
@@ -24,12 +25,6 @@ export default class ListItem extends React.Component {
         this.setState({ max: data.max, loading: false })
       })
   }
-  /*
-    static getDerivedStateFromProps(props, state){
-        if(props.item.quantity !== state.quantity)
-            return {quantity: props.item.quantity};
-        return null;
-    } */
 
   render () {
     return (

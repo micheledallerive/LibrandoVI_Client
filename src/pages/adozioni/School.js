@@ -3,6 +3,8 @@ import React from 'react'
 import BookLoader from '../../components/BookLoader'
 import CustomLink from '../../components/CustomLink'
 
+import { API_URL } from '../../constants'
+
 export default class School extends React.Component {
   constructor (props) {
     super(props)
@@ -15,13 +17,12 @@ export default class School extends React.Component {
 
   componentDidMount () {
     fetch(
-      'https://micheledallerive.ch:3001/adozioni/classi?scuola=' +
-        this.props.codice
+      `${API_URL}/adozioni/classi?scuola=${this.props.codice}`
     )
       .then(res => res.json())
       .then(data => {
         fetch(
-          'https://micheledallerive.ch:3001/school?codice=' + this.props.codice
+          `${API_URL}/school?codice=${this.props.codice}`
         )
           .then(res => res.json())
           .then(scuola => {
@@ -87,8 +88,8 @@ export default class School extends React.Component {
                                 <CustomLink
                                   tag='div'
                                   to={
-                                    '/adozioni/' + this.props.codice + '/' + classe
-                                  }
+                                '/adozioni/' + this.props.codice + '/' + classe
+                              }
                                 >
                                   <div className='card mx-4 my-3 pointer rounded-lg shadow-sm item'>
                                     <div className='card-body'>

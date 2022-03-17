@@ -1,5 +1,5 @@
 import React from 'react'
-import { BUY_MULTIPLIER, SELL_MULTIPLIER } from '../constants'
+import { BUY_MULTIPLIER, SELL_MULTIPLIER, API_URL } from '../constants'
 import defaultBook from '../img/default_book.png'
 import { getFinalPrice, priceFormat } from '../utils'
 import BookLoader from '../components/BookLoader'
@@ -16,7 +16,7 @@ export default class Book extends React.Component {
   }
 
   componentDidMount () {
-    fetch('https://micheledallerive.ch:3001/book/' + this.props.ISBN)
+    fetch(`${API_URL}/book/` + this.props.ISBN)
       .then(res => res.json())
       .then(data => {
         this.setState({ data: data, loading: false })
