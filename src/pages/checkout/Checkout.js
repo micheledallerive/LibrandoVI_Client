@@ -60,7 +60,7 @@ export default class Checkout extends React.Component {
       }
     })
     console.log(orderInfo)
-    fetch(`${API_URL}:3001/order`, {
+    fetch(`${API_URL}/order`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
