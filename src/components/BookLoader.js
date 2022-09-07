@@ -1,15 +1,15 @@
-import React from 'react'
-import '../loading_style.css'
+import React from "react";
+import "../loading_style.css";
 
 const BookLoader = () => {
   return (
     <>
-      <div className='card-body row h-100 justify-content-center align-items-center'>
-        <div class='book'>
-          <div class='inner'>
-            <div class='left' />
-            <div class='middle' />
-            <div class='right' />
+      <div className="card-body row h-100 justify-content-center align-items-center">
+        <div className="book">
+          <div className="inner">
+            <div className="left" />
+            <div className="middle" />
+            <div className="right" />
           </div>
           <ul>
             <li />
@@ -34,7 +34,7 @@ const BookLoader = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default BookLoader
+export default BookLoader;
