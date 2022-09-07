@@ -109,8 +109,8 @@ export default class Book extends React.Component {
                           }
                         >
                           {this.state.data.quantity === 0
-                            ? "Non disponibile per l'acquisto"
-                            : "Disponibile"}
+                            ? "Not available"
+                            : "Available"}
                         </span>
                       </div>
                     </div>

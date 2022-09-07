@@ -52,8 +52,8 @@ export default class ListItem extends React.Component {
                       }
                     >
                       {parseInt(this.props.item.action) > 0
-                        ? "COMPRA"
-                        : "VENDI"}
+                        ? "BUY"
+                        : "SELL"}
                     </span>
                     <span className="h4 ml-2">{this.props.item.book.nome}</span>
                   </CustomLink>

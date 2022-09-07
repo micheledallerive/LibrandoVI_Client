@@ -213,7 +213,7 @@ export default class Checkout extends React.Component {
                         this.changeTassa($(e.target).prop("selectedIndex"))
                       }
                     >
-                      <option selected>We come to you house - 3€</option>
+                      <option selected>We come to you - 3€</option>
                       <option>In the center - Free</option>
                     </select>
                   </div>

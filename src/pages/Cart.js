@@ -140,7 +140,7 @@ export default class Cart extends React.Component {
                           }
                         }}
                       >
-                        Empty your cart.
+                        Empty your cart
                       </button>
                     </div>
                     <div className="d-flex col-lg-8 justify-content-end pt-lg-0 pt-2">
