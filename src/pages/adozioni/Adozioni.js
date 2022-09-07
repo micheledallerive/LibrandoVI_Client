@@ -90,7 +90,7 @@ export default class Adozioni extends React.Component {
                       type="text"
                       className="form-control"
                       style={{ borderRadius: "0 .25rem .25rem 0" }}
-                      placeholder="Cerca scuola..."
+                      placeholder="Search school..."
                       aria-label="ISBN"
                       aria-describedby="basic-addon1"
                       id="filter_input"

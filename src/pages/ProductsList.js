@@ -65,7 +65,7 @@ class ProductsList extends React.Component {
               type="text"
               className="form-control"
               style={{ borderRadius: "0 .25rem .25rem 0" }}
-              placeholder="Cerca nome, ISBN o autori..."
+              placeholder="Search name, ISBN or authors..."
               aria-label="ISBN"
               aria-describedby="basic-addon1"
               id="filter_input"
