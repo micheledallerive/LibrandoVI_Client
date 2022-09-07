@@ -1,10 +1,10 @@
-import React from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import React from "react";
+import { useHistory, useParams } from "react-router-dom";
 
-import Classe from '../pages/adozioni/Classe'
+import Classe from "../pages/adozioni/Classe";
 
-function ClasseWrapper (props) {
-  const { codice, classe } = useParams()
+function ClasseWrapper(props) {
+  const { codice, classe } = useParams();
   return (
     <>
       <Classe
@@ -14,6 +14,6 @@ function ClasseWrapper (props) {
         addToCart={props.addToCart}
       />
     </>
-  )
+  );
 }
-export default ClasseWrapper
+export default ClasseWrapper;
